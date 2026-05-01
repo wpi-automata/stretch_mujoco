@@ -320,15 +320,15 @@ class StretchMujocoSimulator:
                 Actuators.base_rotate,
                 Actuators.base_translate,
             ]:
-                current_position = actuator.get_position_relative(
-                    self.pull_status()
-                )
-                if actuator == Actuators.left_wheel_vel or actuator == Actuators.base_translate:
-                    current_position = current_position[0]
-                elif actuator == Actuators.right_wheel_vel:
-                    current_position = current_position[1]
-                elif actuator == Actuators.base_rotate:
-                    current_position = current_position[2]
+                status = self.pull_status()
+                if actuator == Actuators.base_rotate:
+                    current_position = Actuators.base_rotate.get_position_relative(status)[2]
+                else:
+                    base_pos = Actuators.base_translate.get_position_relative(status)
+                    if actuator == Actuators.right_wheel_vel:
+                        current_position = base_pos[1]
+                    else:  # left_wheel_vel or base_translate
+                        current_position = base_pos[0]
             else:
                 current_position = actuator.get_position(self.pull_status())
 
