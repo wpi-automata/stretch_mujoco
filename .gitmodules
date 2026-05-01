@@ -1,6 +1,6 @@
 [submodule "third_party/robocasa"]
 	path = third_party/robocasa
-	url = git@github.com:wpi-automata/robocasa.git
+	url = git@github.com:wpi-automata/stretch_robocasa.git
 [submodule "third_party/robosuite"]
 	path = third_party/robosuite
 	url = git@github.com:wpi-automata/robosuite.git
