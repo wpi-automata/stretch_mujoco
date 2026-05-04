@@ -8,6 +8,6 @@ robot_settings = {
 depth_limits = {"d405": 1, "d435i": 10}
 
 
-base_motion = {"timeout": 15, "default_x_vel": 0.3, "default_r_vel": 1.0}
+base_motion = {"timeout": 15, "default_x_vel": 0.8, "default_r_vel": 3.0}
 
 # TODO: Add params to tune joints response motion profiles

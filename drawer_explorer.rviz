@@ -1,0 +1,55 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Image
+      Name: Head Camera
+      Topic:
+        Value: /drawer_explorer/head_camera/image_raw
+        Reliability Policy: Best Effort
+      Enabled: true
+    - Class: rviz_default_plugins/Image
+      Name: Wrist Camera
+      Topic:
+        Value: /drawer_explorer/wrist_camera/image_raw
+        Reliability Policy: Best Effort
+      Enabled: true
+    - Class: rviz_default_plugins/Image
+      Name: Detection (with BBox)
+      Topic:
+        Value: /drawer_explorer/detection_image
+        Reliability Policy: Best Effort
+      Enabled: true
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Drawer BBox (3D)
+      Topic:
+        Value: /drawer_explorer/drawer_bbox
+      Enabled: true
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Plane Cell Count: 20
+      Cell Size: 0.5
+      Color: 100; 100; 100
+      Enabled: true
+    - Class: rviz_default_plugins/Axes
+      Name: World Origin
+      Length: 0.3
+      Radius: 0.02
+      Enabled: true
+  Global Options:
+    Fixed Frame: world
+    Frame Rate: 30
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 4.0
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0.6
+      Pitch: 0.5
+      Yaw: 0.8
